@@ -19,8 +19,16 @@ the assumption the python, npm server, Django libraries installed
 start the backend server
 cd c:\projectweb
 cd c:\backend
+cd c:\projectweb\backend
+node server.js
 
 start the React from application
 npm run build
 npx serve -s dist -l 3000
 http://localhost:3000/
+
+cd c:\projectweb\frontend
+npm run build
+xcopy build\* C:\Apache24\htdocs\ /E /H /C /I
+cd c:\Apache24\bin
+httpd.exe -k restart
